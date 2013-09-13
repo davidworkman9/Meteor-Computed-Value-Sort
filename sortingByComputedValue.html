@@ -1,0 +1,56 @@
+<head>
+	<title>Sorting By Computed Value in MeteorJS</title>
+</head>
+
+<body>
+	{{> orders}}
+</body>
+
+<template name="orders">
+	<table class="table">
+	  	<thead>
+	  		<tr>
+	  			<th>Order Number</th>
+	  			<th>Total</th>
+	  		</tr>
+	  	</thead>
+	  	<tbody>
+	  		{{#each orders}}
+		  		<tr class="order">
+		  			<td>{{orderID}}</td>
+		  			<td>{{total}}</td>
+				</tr>
+	  		{{/each}}
+	  	</tbody>
+	</table>
+	{{>hoverDetails}}
+</template>
+
+<template name="hoverDetails">
+		{{#if order}}
+			<div class="hoverDetails">
+			{{#with order}}
+				<div style="text-align: center;">
+					<h2>Order ID</h2>
+					{{_id}}
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Product Name</th>
+							<th>Product Cost</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each products}}
+						<tr>
+							<td>{{product}}</td>
+							<td>{{cost}}</td>
+							{{/each}}
+						</tr>
+					</tbody>
+				</table>
+			{{/with}}
+			</div>
+		{{/if}}
+</template>

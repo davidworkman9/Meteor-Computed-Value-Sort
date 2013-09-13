@@ -1,0 +1,10 @@
+.hoverDetails {
+	border: 1px solid black;
+	padding:15px;
+	background:white;
+	position:absolute;
+}
+
+.order:hover {
+	background-color:lightblue;
+}
